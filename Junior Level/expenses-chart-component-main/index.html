@@ -42,6 +42,9 @@
     const daydata = []
     const amountdata = []
 
+      
+    const ctx = document.getElementById('myChart');
+   ;
     fetch('data.json')
       .then(response => response.json())
       .then(json => {
@@ -49,10 +52,8 @@
           daydata.push(json[days].day)
           amountdata.push(json[days].amount)
         }})
-
-      
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
+        .then (() =>{
+          const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: daydata,
@@ -90,9 +91,12 @@
                  color: 'hsl(0, 0%, 100%)',
                  display: false
                }
-        }
+        } 
     }
-} }) ;
+} })
+        })
+        
+
 
 
   </script>
