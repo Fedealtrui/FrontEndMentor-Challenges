@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Expenses chart component</title>
+  <title> Expenses chart component</title>
 
 </head>
 <body>
@@ -41,6 +41,7 @@
   <script>
     const daydata = []
     const amountdata = []
+
     fetch('data.json')
       .then(response => response.json())
       .then(json => {
@@ -48,6 +49,7 @@
           daydata.push(json[days].day)
           amountdata.push(json[days].amount)
         }})
+
       
     const ctx = document.getElementById('myChart');
     const myChart = new Chart(ctx, {
@@ -91,8 +93,6 @@
         }
     }
 } }) ;
-
-console.log(Chart)
 
 
   </script>
